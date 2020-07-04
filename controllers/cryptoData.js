@@ -6,7 +6,7 @@ const requestOptions = {
     uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=50',
     qs: {
         'start': '1',
-        'limit': '50',
+        'limit': '15',
         'convert': 'USD'
     },
     headers: {
@@ -16,14 +16,14 @@ const requestOptions = {
     gzip: true
 };
 
-const getData = async (req, res) => {  
+const getData = async () => {  
     const resp = await rp(requestOptions);
     const data = await resp.data;
     return data;    
 }
 
 
-exports.cryptos = async (req, res) => {
+exports.cryptos = async () => {
     
     try {
          const result = await getData();

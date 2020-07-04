@@ -2,7 +2,8 @@ const Crypto = require('../models/crypto');
 const nodemailer = require("nodemailer");
 const User = require("../models/user")
 const formidable = require('formidable');
-const message = require("../core/message")
+const messages = require('../core/messages')
+
 
 
 // Get a single cryptocurrency data from the database
@@ -109,8 +110,7 @@ exports.update = (req, res) => {
     // :TODO
 }
 
-exports.search = (req, res) => {
-   
+exports.search = (req, res) => { 
   
 }
 
