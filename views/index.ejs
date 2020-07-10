@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Cryptocurrency Feed</title>
+
+  <!-- Google fonts  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/7c486afd6c.js"></script>
+
+  <!-- Bootstrap script -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section id="title">
+    <div class="container-fluid">
+    <!-- Nav Bar -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+           <h3 <a href="" class="navbar-brand">Cryptocurrency News</a></h3>
+           
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Bitcoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Sports</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Title -->
+
+    <div class="container-fluid">
+      <h3 class="text-info">Daily Cryptocurrency Update</h3>
+    <div class="row section1">
+     
+      <div class="col-lg-6">
+
+        <div class="row">
+          <div class="col-lg-12" id="content">
+            <img class="img-fluid effect" id="url-img" src=<%= data[0].urlToImage %> alt="bitcoin_news">
+            <h6 class="h6 effect" id="headline"><%= data[0].title %></h6>
+            <p class="lead" id="content-news"><%= data[0].content.slice(0,200) + "..." %></p>
+            <ul class="list-inline">
+              <li class="list-inline-item author" id="author"><%= data[0].author %> | <%= data[0].publishedAt.slice(0,10) %></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 check-item">
+            <img class="check-item effect" id="url-img" src=<%= data[1].urlToImage %> alt="bitcoin_news">
+            <h6 class="h6 effect" id="headline"><%= data[1].title %></h6>
+            <p class="lead" id="content-news"><%= data[1].content.slice(0,150) + "..." %></p>
+            <ul class="list-inline">
+              <li class="list-inline-item author" id="author"><%= data[1].author %> | <%= data[1].publishedAt.slice(0,10) %></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6 check-item">
+            <img class="check-item effect" id="url-img" src=<%= data[3].urlToImage %> alt="bitcoin_news">
+            <h6 class="h6 effect" id="headline"><%= data[3].title %></h6>
+            <p class="lead" id="content-news"><%= data[3].content.slice(0,150) + "..." %></p>
+            <ul class="list-inline">
+              <li class="list-inline-item author" id="author"><small><%= data[3].author %> | <%= data[3].publishedAt.slice(0,10) %></small></li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+  
+      <div class="col-lg-6 news" id="news">
+       
+        <table class="table table-hover table-dark">
+          <thead>
+          <tr class="text-warning">
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Price (USD)</th>
+          </tr>
+          </thead>
+          <tbody> 
+
+            <% results.forEach(result => { %>
+               <% for (let key in result.quote){ %>          
+                          <tr> 
+                              <td><%= result.cmc_rank %></td> 
+                              <td><%= result.name %></td> 
+                              <td><%= result.symbol %></td> 
+                              <td><%= result.quote[key].price %></td>          
+                         </tr>            
+             <% } %>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div> 
+  </section>
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row section1">
+      <div class="col-lg-9">
+        
+        <div class="row">
+          <% data.forEach(item => { %>           
+              <div class="col-lg-4 check-item">     
+                  <img class="check-item effect" id="url-img" src=<%= item.urlToImage %> alt="bitcoin_news" />
+                  <h6 class="h6 effect " id="headline"><%= item.title %></h6>
+                    <p class="lead" id="content-news"><%= item.content %><span class="extra">...</span></p>
+                   <ul class="list-inline">
+                    <li class="list-inline-item author" id="author"><small><%= item.author %> | <%= item.publishedAt.slice(0,10) %></small></li>
+                  </ul>
+              </div> 
+               
+          <% }) %>  
+        </div>
+      </div>
+         
+          
+   <!-- ========== Section for news feed =========-->
+
+      <div class="col-lg-3">
+        <% features.forEach(feature => { %>           
+          <div class="check-item">     
+              <h6 class="h6 effect " id="headline"><%= feature.description.slice(0, 120) %><span class="extra">...</span></h6>
+               <ul class="list-inline">
+                <li class="list-inline-item author" id="author"><small><%= feature.category %> | <%= feature.name %></small></li>
+              </ul>
+          </div> 
+           
+      <% }) %> 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <p>© Copyright 2018 TinDog</p>
+
+  </footer>
+
+
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 const rp = require('request-promise');
+const async = require("async");
 const Crypto = require('../models/crypto');
 
 const requestOptions = {
@@ -26,9 +27,9 @@ const getData = async () => {
 exports.cryptos = async () => {
     
     try {
-         const result = await getData();
- 
-        await Crypto.insertMany(result, (error, data) => {
+         const crypto = await getData();
+
+        await Crypto.insertMany(crypto, (error, data) => {
             if (error){
                 console.log(error);       
             }

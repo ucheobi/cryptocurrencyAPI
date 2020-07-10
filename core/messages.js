@@ -26,8 +26,7 @@ exports.messages = async () => {
           border: 1px solid #dddddd;
           text-align: center;
           padding: 8px;
-        }
-        
+        }      
         th {
             color: #ff9900
         }
@@ -38,21 +37,26 @@ exports.messages = async () => {
 
         data.forEach(value => {
                 let { name, quote } = value;
-                message += `
-                    <tr>
-                        <td>${name}</td>
-                        <td>${quote.USD.price}</td>
-                    </tr>       
-                `    
+
+                for (let key in quote){     
+                    message += `
+                        <tr>
+                            <td>${name}</td>
+                            <td>${quote[key].price}</td>
+                        </tr>       
+                    ` 
+                }
         })
 
         message += '</table>'
         
         User.find({},'email name -_id', (err, users) => {
             if(err){
-                return status(400).json({
-                    message: "I cant find your data"
-                })
+                console.log(err);
+            } 
+
+            if(users.length == 0){
+                console.log("Sorry, no email is found in this directory");
             }
             
 

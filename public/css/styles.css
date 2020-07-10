@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.container-fluid {
+    padding: 0 0;
+}
+
+h1 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+h3 {
+    font-family: "Montserrat";
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2% 0;
+ }
+
+ h6 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+
+    padding: 0 0.5rem;
+ }
+
+ h6.effect:hover{
+     text-decoration: underline;
+     color: #2082c4;
+ }
+
+ p.lead {
+    font-family: 'Montserrat';
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    font-size: 14px;
+ }
+
+/* Navigation Bar  */
+.text-info {
+    padding: 0.9rem 0;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.0rem;
+    font-weight: 700;
+    margin-left: 3rem;
+}
+
+.nav-item {
+    padding: 0.5rem;
+}
+
+.nav-link {
+    font-family: "Montserrat";
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Section Styling */
+
+.section1 {
+    margin: 0 1% 1% 1%;
+}
+
+.newsline {
+   padding: 2%;
+}
+
+.effect:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.author {
+    font-size: small;
+    padding-left: 0.5rem;
+}
+
+
+.check-item {
+    padding: 1 0 1% 1%;
+    width: 100%;
+}
+
+.features {
+    padding: 1%;
+    margin: 0 0. 1%;
+}
+
+

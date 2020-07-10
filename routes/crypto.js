@@ -3,6 +3,7 @@ const router = express.Router();
 
 const { cryptos } = require('../controllers/cryptoData');
 const { latest, single, create, remove, update, search, subscribe } = require('../controllers/cryptoAPI')
+//const index = require("../controllers/index.js")
 
 router.get('/cryptos', cryptos);
 

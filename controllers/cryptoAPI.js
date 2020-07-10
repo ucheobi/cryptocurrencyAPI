@@ -4,8 +4,6 @@ const User = require("../models/user")
 const formidable = require('formidable');
 const messages = require('../core/messages')
 
-
-
 // Get a single cryptocurrency data from the database
 exports.single = (req, res) => {
     let searchId = req.params.cryptoId;
