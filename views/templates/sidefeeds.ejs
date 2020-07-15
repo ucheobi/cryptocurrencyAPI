@@ -1,0 +1,16 @@
+ <!-- ========== Section for news feed =========-->
+
+ <div class="col-lg-3">
+    <% features.forEach(feature => { %>           
+      <div class="check-item">     
+          <h6 class="h6 effect" id="headline"><%= feature.description.slice(0, 120) %><span class="extra">...</span></h6>
+           <ul class="list-inline">
+            <li class="list-inline-item author" id="author"><small><%= feature.category %> | <%= feature.name %></small></li>
+          </ul>
+      </div> 
+       
+  <% }) %> 
+  </div>
+
+</div>
+</section>

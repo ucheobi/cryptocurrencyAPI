@@ -1,0 +1,21 @@
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row section1">
+      <div class="col-lg-9">
+        
+        <div class="row">
+          <% data.forEach(item => { %>           
+              <div class="col-lg-4 col-sm-6 check-item">     
+                  <img class="check-item effect" id="url-img" src=<%= item.urlToImage %> alt="bitcoin_news" />
+                  <h6 class="h6 effect " id="headline"><%= item.title %></h6>
+                    <p class="lead" id="content-news"><%= item.content %><span class="extra">...</span></p>
+                   <ul class="list-inline">
+                    <li class="list-inline-item author" id="author"><small><%= item.author %> | <%= item.publishedAt.slice(0,10) %></small></li>
+                  </ul>
+              </div> 
+               
+          <% }) %>  
+        </div>
+      </div>
+         

@@ -7,6 +7,8 @@ const Crypto = require('../models/crypto');
 
 router.get("/", (req, res) => {
 
+    let isSubscribe = req.query.submitted;
+
     Crypto.find({})
         .exec((err, results) => {
         if (err){
@@ -45,7 +47,7 @@ router.get("/", (req, res) => {
                                 })
                             }
                             
-                            res.render("index", {data: news, results: results, features: features })
+                            res.render("index", {data: news, results: results, features: features, subscribe: isSubscribe, page_name: 'home.ejs' })
                         })
     })      })
     

@@ -1,0 +1,43 @@
+
+<div class="single">
+       
+    <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Rank</th>
+            <td><%= crypto.cmc_rank %></td>
+          </tr>
+          <tr>
+            <th>Symbol</th>
+            <td><%= crypto.symbol %></td>
+          </tr>
+          <tr>
+            <th>Price</th>
+          
+                <td><%= crypto.quote.price %></td>                      
+           
+          </tr>
+          <tr>
+            <th>Maximum Supply</th>
+            <td><%= crypto.max_supply %></td>
+          </tr>
+          <tr>
+            <th>Circulating Supply</th>
+            <td><%= crypto.circulating_supply %></td>
+          </tr>
+          <tr>
+            <th>Date Added</th>
+            <td><%= crypto.date_added %></td>
+          </tr>
+          <tr>
+            <th>Tags</th>
+            <td><%= crypto.tags %></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>

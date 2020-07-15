@@ -33,7 +33,8 @@ exports.cryptos = async () => {
             if (error){
                 console.log(error);       
             }
-            console.log(data);        
+             console.log(data);   
+                 
         })  
         
     } catch (error) {

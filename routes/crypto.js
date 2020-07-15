@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const { cryptos } = require('../controllers/cryptoData');
-const { latest, single, create, remove, update, search, subscribe } = require('../controllers/cryptoAPI')
+const { latest, single, create, remove, update, search } = require('../controllers/cryptoAPI')
 //const index = require("../controllers/index.js")
 
 router.get('/cryptos', cryptos);
@@ -14,6 +14,6 @@ router.put('/crypto/:cryptoId', update);
 
 router.get('/latest', latest)
 router.get('/search', search)
-router.post('/subscribe', subscribe)
+
 
 module.exports = router;

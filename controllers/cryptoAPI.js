@@ -6,6 +6,7 @@ const messages = require('../core/messages')
 
 // Get a single cryptocurrency data from the database
 exports.single = (req, res) => {
+    let isSubscribe = req.query.submitted;
     let searchId = req.params.cryptoId;
     
     if(searchId){     
@@ -16,7 +17,7 @@ exports.single = (req, res) => {
                     error: 'Data with such ID does not exist!'
                 })
             }
-            res.json(crypto)
+            res.render("bitcoin", {crypto: crypto, subscribe: isSubscribe, page_name: 'singlenews.ejs' })
         })
     } else {
         res.status(400).json({
@@ -111,40 +112,3 @@ exports.update = (req, res) => {
 exports.search = (req, res) => { 
   
 }
-
-exports.subscribe = (req, res) => {
-    let form = new formidable.IncomingForm();
-    form.keepExtensions = true;
-    form.parse(req, (err, fields, files) => {
-        if(err){
-            return res.status(400).json({
-                error: 'An error has occured trying to subscribe, please refresh your browser and try again!'
-            })
-        }
-
-        const { email } = fields;
-
-        if(!email){
-            return res.status(400).json({
-                error: 'Valid email address is required'
-            }) 
-        }
-
-        let user = new User(fields);
-        user.save((err, result) => {
-            if(err){
-                return res.status(400).json({
-                    error: 'An error has occured trying to subscribing!!!'
-                })                    
-            }
-
-            res.json(
-                {
-                    result: result,
-                    message: "Thank you for subscribing"
-                }
-            );
-        })
-    })
-}
-

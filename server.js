@@ -12,6 +12,7 @@ const News = require("./models/news");
 const Newsfeed = require("./models/newsfeed");
 
 
+
 //const expressValidator = require('express-validator');
 require('dotenv').config();
 
@@ -20,6 +21,7 @@ const newsapi = new NewsAPI(process.env.API_NEWS_KEY);
 //import all routes middleware
 const index = require('./routes/index.js');
 const cryptoRoute = require('./routes/crypto.js');
+const subscribe = require('./core/subscribe');
 
 //initialize app
 const app = express()
@@ -49,6 +51,7 @@ app.use(cors());
 
 //get root route
 app.use("/", index);
+app.use("/subscribe", subscribe)
 app.use("/api", cryptoRoute);
 
 

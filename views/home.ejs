@@ -1,0 +1,35 @@
+       
+         
+    
+            <div class="row">
+              <div class="col-lg-12" id="content">
+                <img class="img-fluid effect" id="url-img" src=<%= data[0].urlToImage %> alt="bitcoin_news">
+                <h6 class="h6 effect" id="headline"><%= data[0].title %></h6>
+                <p class="lead" id="content-news"><%= data[0].content.slice(0,200) + "..." %></p>
+                <ul class="list-inline">
+                  <li class="list-inline-item author" id="author"><%= data[0].author %> | <%= data[0].publishedAt.slice(0,10) %></li>
+                </ul>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-lg-6 check-item">
+                <img class="check-item effect" id="url-img" src=<%= data[1].urlToImage %> alt="bitcoin_news">
+                <h6 class="h6 effect" id="headline"><%= data[1].title %></h6>
+                <p class="lead" id="content-news"><%= data[1].content.slice(0,150) + "..." %></p>
+                <ul class="list-inline">
+                  <li class="list-inline-item author" id="author"><%= data[1].author %> | <%= data[1].publishedAt.slice(0,10) %></li>
+                </ul>
+              </div>
+    
+              <div class="col-lg-6 check-item">
+                <img class="check-item effect" id="url-img" src=<%= data[3].urlToImage %> alt="bitcoin_news">
+                <h6 class="h6 effect" id="headline"><%= data[3].title %></h6>
+                <p class="lead" id="content-news"><%= data[3].content.slice(0,150) + "..." %></p>
+                <ul class="list-inline">
+                  <li class="list-inline-item author" id="author"><small><%= data[3].author %> | <%= data[3].publishedAt.slice(0,10) %></small></li>
+                </ul>
+              </div>
+            </div>
+            
+    

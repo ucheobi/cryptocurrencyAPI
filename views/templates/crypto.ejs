@@ -1,0 +1,34 @@
+
+      </div>
+<div class="col-lg-6 news" id="news">
+       
+    <table class="table table-hover table-dark">
+      <thead>
+      <tr class="text-warning">
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Price (USD)</th>
+      </tr>
+      </thead>
+      <tbody> 
+
+        <% results.forEach(result => { %>
+          
+           <% for (let key in result.quote){ %> 
+             <% let url = "api/crypto/" + result._id %>        
+                      <tr>
+                          <td><%= result.cmc_rank %></td> 
+                          <td id="single"><a href="<%= url %>"><%= result.name %></a></td>
+                          <td><%= result.symbol %></td> 
+                          <td><%= result.quote[key].price %></td>             
+                     </tr>            
+         <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</div> 
+</section>
